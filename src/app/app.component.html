@@ -1,0 +1,32 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">
+      Sidenav content
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
+      <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+      <p>Events:</p>
+      <div class="example-events">
+        <div *ngFor="let e of events">{{e}}</div>
+      </div>
+
+      <div class="example-container1">
+        <mat-form-field>
+          <input matInput placeholder="Input">
+        </mat-form-field>
+      
+        <mat-form-field>
+          <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <mat-select placeholder="Select">
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
